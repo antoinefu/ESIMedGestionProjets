@@ -1,0 +1,6 @@
+D:\Visual Studio 2017 Projects\GestionProjets\bean\bin\Debug\bean.dll
+D:\Visual Studio 2017 Projects\GestionProjets\bean\bin\Debug\bean.pdb
+D:\Visual Studio 2017 Projects\GestionProjets\bean\obj\Debug\bean.csprojAssemblyReference.cache
+D:\Visual Studio 2017 Projects\GestionProjets\bean\obj\Debug\bean.csproj.CoreCompileInputs.cache
+D:\Visual Studio 2017 Projects\GestionProjets\bean\obj\Debug\bean.dll
+D:\Visual Studio 2017 Projects\GestionProjets\bean\obj\Debug\bean.pdb

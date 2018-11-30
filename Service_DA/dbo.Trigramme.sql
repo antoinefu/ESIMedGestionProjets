@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Trigramme]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Nom] NVARCHAR(3) NOT NULL
+)
