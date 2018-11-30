@@ -30,7 +30,6 @@ namespace batch
             Trigramme trigramme = FactoryService.CreateServiceTrigramme().GetTrigrammeById(5);
             Console.WriteLine("- trigramme :  " + trigramme.Id + " " + trigramme.Nom);
             Console.WriteLine("");
-            Console.WriteLine("");
             Console.ReadLine();
         }
     }
