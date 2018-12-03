@@ -65,6 +65,7 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FactoryServiceDA.cs" />
+    <Compile Include="interfaces\IDAProjet.cs" />
     <Compile Include="interfaces\IDATypeExigence.cs" />
     <Compile Include="interfaces\IDATrigramme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +74,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="services\SDAProjet.cs" />
     <Compile Include="services\SDATrigramme.cs" />
     <Compile Include="services\SDATypeExigence.cs" />
   </ItemGroup>
@@ -96,11 +98,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Database.mdf" />
     <Content Include="Database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>

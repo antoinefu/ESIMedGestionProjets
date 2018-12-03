@@ -12,3 +12,15 @@ D:\Visual Studio 2017 Projects\GestionProjets\services\obj\Debug\services.csproj
 D:\Visual Studio 2017 Projects\GestionProjets\services\obj\Debug\services.csproj.CopyComplete
 D:\Visual Studio 2017 Projects\GestionProjets\services\obj\Debug\services.dll
 D:\Visual Studio 2017 Projects\GestionProjets\services\obj\Debug\services.pdb
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\services.dll
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\services.pdb
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\bean.dll
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\Service_DA.dll
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\bean.pdb
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\Service_DA.pdb
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\Service_DA.dll.config
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\obj\Debug\services.csprojAssemblyReference.cache
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\obj\Debug\services.csproj.CoreCompileInputs.cache
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\obj\Debug\services.csproj.CopyComplete
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\obj\Debug\services.dll
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\obj\Debug\services.pdb

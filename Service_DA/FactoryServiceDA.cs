@@ -19,5 +19,10 @@ namespace Service_DA
         {
             return new SDATrigramme();
         }
+
+        public static IDAProjet CreateServiceDAProjet()
+        {
+            return new SDAProjet();
+        }
     }
 }

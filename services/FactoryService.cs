@@ -19,5 +19,10 @@ namespace services
         {
             return new STrigramme();
         }
+
+        public static IProjet CreateServiceProjet()
+        {
+            return new SProjet();
+        }
     }
 }
