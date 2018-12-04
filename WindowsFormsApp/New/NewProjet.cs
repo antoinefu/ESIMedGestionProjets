@@ -84,6 +84,11 @@ namespace WindowsFormsApp
                             MessageBoxButtons buttons = MessageBoxButtons.OK;
                             MessageBox.Show(message, caption, buttons);
                         }
+                        // On refresh le form Main de l'app
+                        if (Application.OpenForms["Main"] != null)
+                        {
+                            (Application.OpenForms["Main"] as Main).Init();
+                        }
                         // On ferme la form d'ajout
                         this.Close();
                     }

@@ -4008,21 +4008,20 @@ namespace Service_DA.DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_label", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "label", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [TypeExigence] ([id], [label]) VALUES (@id, @label);\r\nSELECT id, labe" +
-                "l FROM TypeExigence WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [TypeExigence] ([label]) VALUES (@label);\r\nSELECT id, label FROM Type" +
+                "Exigence WHERE (id = SCOPE_IDENTITY()) ORDER BY label";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@label", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "label", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [TypeExigence] SET [id] = @id, [label] = @label WHERE (([id] = @Original_i" +
-                "d) AND ([label] = @Original_label));\r\nSELECT id, label FROM TypeExigence WHERE (" +
-                "id = @id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [TypeExigence] SET [label] = @label WHERE (([id] = @Original_id) AND ([lab" +
+                "el] = @Original_label));\r\nSELECT id, label FROM TypeExigence WHERE (id = @id) OR" +
+                "DER BY label";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@label", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "label", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_label", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "label", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4038,7 +4037,7 @@ namespace Service_DA.DataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        TypeExigence.*\r\nFROM            TypeExigence";
+            this._commandCollection[0].CommandText = "SELECT        TypeExigence.*\r\nFROM            TypeExigence\r\nORDER BY label";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4217,13 +4216,13 @@ namespace Service_DA.DataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [Trigramme] ([Nom]) VALUES (@Nom);\r\nSELECT Id, Nom FROM Trigramme WHE" +
-                "RE (Id = SCOPE_IDENTITY())";
+                "RE (Id = SCOPE_IDENTITY()) ORDER BY Nom";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [Trigramme] SET [Nom] = @Nom WHERE (([Id] = @Original_Id) AND ([Nom] = @Or" +
-                "iginal_Nom));\r\nSELECT Id, Nom FROM Trigramme WHERE (Id = @Id)";
+                "iginal_Nom));\r\nSELECT Id, Nom FROM Trigramme WHERE (Id = @Id) ORDER BY Nom";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4244,16 +4243,16 @@ namespace Service_DA.DataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Trigramme.*\r\nFROM            Trigramme";
+            this._commandCollection[0].CommandText = "SELECT        Trigramme.*\r\nFROM            Trigramme\r\nORDER BY Nom";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Trigramme.*\r\nFROM            Trigramme\r\nWHERE id = @p_id";
+            this._commandCollection[1].CommandText = "SELECT Id, Nom FROM Trigramme WHERE (Id = @p_id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Trigramme.*\r\nFROM            Trigramme\r\nWHERE Nom = @p_nom";
+            this._commandCollection[2].CommandText = "SELECT Id, Nom FROM Trigramme WHERE (Nom = @p_nom)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p_nom", global::System.Data.SqlDbType.NVarChar, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -4506,7 +4505,7 @@ namespace Service_DA.DataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [Projet] ([Nom], [Trigramme], [Responsable], [DateDebut], [DateFinPrevue]) VALUES (@Nom, @Trigramme, @Responsable, @DateDebut, @DateFinPrevue);
-SELECT Id, Nom, Trigramme, Responsable, DateDebut, DateFinPrevue FROM Projet WHERE (Id = SCOPE_IDENTITY())";
+SELECT Id, Nom, Trigramme, Responsable, DateDebut, DateFinPrevue FROM Projet WHERE (Id = SCOPE_IDENTITY()) ORDER BY Nom";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Trigramme", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trigramme", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4516,7 +4515,7 @@ SELECT Id, Nom, Trigramme, Responsable, DateDebut, DateFinPrevue FROM Projet WHE
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [Projet] SET [Nom] = @Nom, [Trigramme] = @Trigramme, [Responsable] = @Responsable, [DateDebut] = @DateDebut, [DateFinPrevue] = @DateFinPrevue WHERE (([Id] = @Original_Id) AND ([Nom] = @Original_Nom) AND ([Trigramme] = @Original_Trigramme) AND ([Responsable] = @Original_Responsable) AND ([DateDebut] = @Original_DateDebut) AND ([DateFinPrevue] = @Original_DateFinPrevue));
-SELECT Id, Nom, Trigramme, Responsable, DateDebut, DateFinPrevue FROM Projet WHERE (Id = @Id)";
+SELECT Id, Nom, Trigramme, Responsable, DateDebut, DateFinPrevue FROM Projet WHERE (Id = @Id) ORDER BY Nom";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Trigramme", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trigramme", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4545,7 +4544,7 @@ SELECT Id, Nom, Trigramme, Responsable, DateDebut, DateFinPrevue FROM Projet WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Projet.*\r\nFROM            Projet";
+            this._commandCollection[0].CommandText = "SELECT        Projet.*\r\nFROM            Projet\r\nORDER BY Nom";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -4554,7 +4553,8 @@ SELECT Id, Nom, Trigramme, Responsable, DateDebut, DateFinPrevue FROM Projet WHE
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Projet.*\r\nFROM            Projet\r\nWHERE Id = @p_id";
+            this._commandCollection[2].CommandText = "SELECT DateDebut, DateFinPrevue, Id, Nom, Responsable, Trigramme FROM Projet WHER" +
+                "E (Id = @p_id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();

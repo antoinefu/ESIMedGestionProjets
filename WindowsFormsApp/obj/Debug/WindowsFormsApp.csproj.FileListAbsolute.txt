@@ -25,7 +25,5 @@ D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\bin\Debug\Se
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\bin\Debug\Service_DA.dll.config
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CopyComplete
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.NewTrigramme.resources
-D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\bin\Debug\Database.mdf
-D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\bin\Debug\Database_log.ldf
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.NewProjet.resources
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.Main.resources
