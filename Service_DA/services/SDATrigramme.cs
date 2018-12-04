@@ -31,6 +31,14 @@ namespace Service_DA.services
             return trigramme;
         }
 
+        public bool IfTrigrammeExisting(string p_nom)
+        {
+            if (new TrigrammeTableAdapter().IfExisting(p_nom).Count != 0)
+                return true;
+            else
+                return false;
+        }
+
         public int NewTrigramme(Trigramme p_trigramme)
         {
             return new TrigrammeTableAdapter().NewTrigramme(p_trigramme.Nom);

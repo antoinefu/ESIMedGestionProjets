@@ -17,6 +17,11 @@ namespace services.services
             return FactoryServiceDA.CreateServiceDATrigramme().GetTrigrammeById(p_id);
         }
 
+        public bool IfTrigrammeExisting(string p_nom)
+        {
+            return FactoryServiceDA.CreateServiceDATrigramme().IfTrigrammeExisting(p_nom);
+        }
+
         public int NewTrigramme(string p_nom)
         {
             return FactoryServiceDA.CreateServiceDATrigramme().NewTrigramme(new Trigramme(0, p_nom));

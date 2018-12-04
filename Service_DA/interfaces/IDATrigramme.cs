@@ -14,5 +14,7 @@ namespace Service_DA.interfaces
         Trigramme GetTrigrammeById(int p_id);
 
         int NewTrigramme(Trigramme p_trigramme);
+
+        bool IfTrigrammeExisting(string p_nom);
     }
 }

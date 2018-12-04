@@ -32,3 +32,9 @@ D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\obj\Debug\batch.csproj
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\obj\Debug\batch.csproj.CopyComplete
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\obj\Debug\batch.exe
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\obj\Debug\batch.pdb
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\bin\Debug\DataSet.cs
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\bin\Debug\DataSet.Designer.cs
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\bin\Debug\DataSet.xsc
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\bin\Debug\DataSet.xsd
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\bin\Debug\DataSet.xss
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\batch\bin\Debug\app.config

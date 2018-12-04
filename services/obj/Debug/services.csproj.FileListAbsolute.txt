@@ -24,3 +24,11 @@ D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\obj\Debug\services.
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\obj\Debug\services.csproj.CopyComplete
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\obj\Debug\services.dll
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\obj\Debug\services.pdb
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\app.config
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\Database.mdf
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\Database_log.ldf
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\DataSet.cs
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\DataSet.Designer.cs
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\DataSet.xsc
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\DataSet.xsd
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\services\bin\Debug\DataSet.xss

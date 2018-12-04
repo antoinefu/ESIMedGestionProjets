@@ -14,5 +14,7 @@ namespace services.interfaces
         Trigramme GetTrigrammeById(int p_id);
 
         int NewTrigramme(string p_nom);
+
+        bool IfTrigrammeExisting(string p_nom);
     }
 }

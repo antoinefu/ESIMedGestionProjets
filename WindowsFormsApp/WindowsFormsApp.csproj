@@ -60,16 +60,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NewProjet.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewProjet.Designer.cs">
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\NewProjet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\NewProjet.Designer.cs">
       <DependentUpon>NewProjet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\NewTrigramme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\NewTrigramme.Designer.cs">
+      <DependentUpon>NewTrigramme.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="NewProjet.resx">
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\NewProjet.resx">
       <DependentUpon>NewProjet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\NewTrigramme.resx">
+      <DependentUpon>NewTrigramme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,7 +109,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -99,6 +119,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bean\bean.csproj">
+      <Project>{a26a3f28-c0de-42b5-ad9d-fbfa558d9312}</Project>
+      <Name>bean</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\services\services.csproj">
+      <Project>{5ef547c1-d062-4912-976d-c126c573add3}</Project>
+      <Name>services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
