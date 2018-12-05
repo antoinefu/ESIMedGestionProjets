@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnNewProjet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.CBListeProjets = new System.Windows.Forms.ComboBox();
@@ -36,6 +37,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabExigences = new System.Windows.Forms.TabPage();
+            this.DGVExigences = new System.Windows.Forms.DataGridView();
+            this.BtnAddExigence = new System.Windows.Forms.Button();
             this.TabTaches = new System.Windows.Forms.TabPage();
             this.TabJalons = new System.Windows.Forms.TabPage();
             this.PnlProjet = new System.Windows.Forms.Panel();
@@ -54,12 +57,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.BtnAddExigence = new System.Windows.Forms.Button();
-            this.BtnUpdateExigence = new System.Windows.Forms.Button();
-            this.BtnDeleteExigence = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fonctionnelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabExigences.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVExigences)).BeginInit();
             this.PnlProjet.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,8 +152,9 @@
             // TabExigences
             // 
             this.TabExigences.BackColor = System.Drawing.Color.White;
-            this.TabExigences.Controls.Add(this.BtnDeleteExigence);
-            this.TabExigences.Controls.Add(this.BtnUpdateExigence);
+            this.TabExigences.Controls.Add(this.button2);
+            this.TabExigences.Controls.Add(this.button1);
+            this.TabExigences.Controls.Add(this.DGVExigences);
             this.TabExigences.Controls.Add(this.BtnAddExigence);
             this.TabExigences.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabExigences.Location = new System.Drawing.Point(4, 25);
@@ -155,6 +163,43 @@
             this.TabExigences.Size = new System.Drawing.Size(954, 427);
             this.TabExigences.TabIndex = 0;
             this.TabExigences.Text = "Exigences";
+            // 
+            // DGVExigences
+            // 
+            this.DGVExigences.BackgroundColor = System.Drawing.Color.White;
+            this.DGVExigences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVExigences.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Description,
+            this.Fonctionnelle,
+            this.Type});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVExigences.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DGVExigences.Location = new System.Drawing.Point(26, 18);
+            this.DGVExigences.Name = "DGVExigences";
+            this.DGVExigences.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DGVExigences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVExigences.Size = new System.Drawing.Size(903, 362);
+            this.DGVExigences.TabIndex = 3;
+            // 
+            // BtnAddExigence
+            // 
+            this.BtnAddExigence.BackColor = System.Drawing.Color.Maroon;
+            this.BtnAddExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddExigence.ForeColor = System.Drawing.Color.White;
+            this.BtnAddExigence.Location = new System.Drawing.Point(26, 386);
+            this.BtnAddExigence.Name = "BtnAddExigence";
+            this.BtnAddExigence.Size = new System.Drawing.Size(180, 34);
+            this.BtnAddExigence.TabIndex = 0;
+            this.BtnAddExigence.Text = "Nouveau";
+            this.BtnAddExigence.UseVisualStyleBackColor = false;
+            this.BtnAddExigence.Click += new System.EventHandler(this.BtnAddExigence_Click);
             // 
             // TabTaches
             // 
@@ -347,42 +392,61 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Infos sur le projet Projet";
             // 
-            // BtnAddExigence
+            // button1
             // 
-            this.BtnAddExigence.BackColor = System.Drawing.Color.Maroon;
-            this.BtnAddExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAddExigence.ForeColor = System.Drawing.Color.White;
-            this.BtnAddExigence.Location = new System.Drawing.Point(8, 387);
-            this.BtnAddExigence.Name = "BtnAddExigence";
-            this.BtnAddExigence.Size = new System.Drawing.Size(180, 34);
-            this.BtnAddExigence.TabIndex = 0;
-            this.BtnAddExigence.Text = "Nouveau";
-            this.BtnAddExigence.UseVisualStyleBackColor = false;
-            this.BtnAddExigence.Click += new System.EventHandler(this.BtnAddExigence_Click);
+            this.button1.BackColor = System.Drawing.Color.Maroon;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(398, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 34);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Supprimer";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // BtnUpdateExigence
+            // button2
             // 
-            this.BtnUpdateExigence.BackColor = System.Drawing.Color.Maroon;
-            this.BtnUpdateExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUpdateExigence.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdateExigence.Location = new System.Drawing.Point(195, 387);
-            this.BtnUpdateExigence.Name = "BtnUpdateExigence";
-            this.BtnUpdateExigence.Size = new System.Drawing.Size(180, 34);
-            this.BtnUpdateExigence.TabIndex = 1;
-            this.BtnUpdateExigence.Text = "Mettre à jour";
-            this.BtnUpdateExigence.UseVisualStyleBackColor = false;
+            this.button2.BackColor = System.Drawing.Color.Maroon;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(212, 387);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(180, 34);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Modifier";
+            this.button2.UseVisualStyleBackColor = false;
             // 
-            // BtnDeleteExigence
+            // Id
             // 
-            this.BtnDeleteExigence.BackColor = System.Drawing.Color.Maroon;
-            this.BtnDeleteExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDeleteExigence.ForeColor = System.Drawing.Color.White;
-            this.BtnDeleteExigence.Location = new System.Drawing.Point(378, 387);
-            this.BtnDeleteExigence.Name = "BtnDeleteExigence";
-            this.BtnDeleteExigence.Size = new System.Drawing.Size(180, 34);
-            this.BtnDeleteExigence.TabIndex = 2;
-            this.BtnDeleteExigence.Text = "Supprimer";
-            this.BtnDeleteExigence.UseVisualStyleBackColor = false;
+            this.Id.FillWeight = 20F;
+            this.Id.Frozen = true;
+            this.Id.HeaderText = "Id.";
+            this.Id.Name = "Id";
+            this.Id.Width = 50;
+            // 
+            // Description
+            // 
+            this.Description.Frozen = true;
+            this.Description.HeaderText = "Descriptif";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 550;
+            // 
+            // Fonctionnelle
+            // 
+            this.Fonctionnelle.Frozen = true;
+            this.Fonctionnelle.HeaderText = "Fonctionnelle ?";
+            this.Fonctionnelle.Name = "Fonctionnelle";
+            this.Fonctionnelle.ReadOnly = true;
+            this.Fonctionnelle.Width = 110;
+            // 
+            // Type
+            // 
+            this.Type.Frozen = true;
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Width = 160;
             // 
             // Main
             // 
@@ -401,6 +465,7 @@
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.TabExigences.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVExigences)).EndInit();
             this.PnlProjet.ResumeLayout(false);
             this.PnlProjet.PerformLayout();
             this.ResumeLayout(false);
@@ -435,7 +500,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnAddExigence;
-        private System.Windows.Forms.Button BtnDeleteExigence;
-        private System.Windows.Forms.Button BtnUpdateExigence;
+        private System.Windows.Forms.DataGridView DGVExigences;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fonctionnelle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
     }
 }

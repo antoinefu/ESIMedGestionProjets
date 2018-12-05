@@ -74,6 +74,7 @@
             this.RBYes.TabStop = true;
             this.RBYes.Text = "Oui";
             this.RBYes.UseVisualStyleBackColor = true;
+            this.RBYes.CheckedChanged += new System.EventHandler(this.RBYes_CheckedChanged);
             // 
             // RBNo
             // 
@@ -85,6 +86,7 @@
             this.RBNo.TabStop = true;
             this.RBNo.Text = "Non";
             this.RBNo.UseVisualStyleBackColor = true;
+            this.RBNo.CheckedChanged += new System.EventHandler(this.RBNo_CheckedChanged);
             // 
             // label3
             // 
@@ -111,6 +113,7 @@
             this.BtnAddExigence.TabIndex = 7;
             this.BtnAddExigence.Text = "Créer l\'exigence";
             this.BtnAddExigence.UseVisualStyleBackColor = true;
+            this.BtnAddExigence.Click += new System.EventHandler(this.BtnAddExigence_Click);
             // 
             // NewExigence
             // 

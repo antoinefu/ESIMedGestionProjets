@@ -21,6 +21,16 @@ namespace Service_DA.services
             return listTypeExigences;
         }
 
+        public TypeExigence GetTypeExigenceById(int idTypeExigence)
+        {
+            TypeExigence type = null;
+            foreach (DataSet.TypeExigenceRow typeExigence in new TypeExigenceTableAdapter().GetTypeExigenceById(idTypeExigence))
+            {
+                type = FromDBToBean(typeExigence);
+            }
+            return type;
+        }
+
         #region FromRowToBean
         private TypeExigence FromDBToBean(DataSet.TypeExigenceRow p_row)
         {

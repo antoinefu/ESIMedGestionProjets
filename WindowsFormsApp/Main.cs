@@ -96,7 +96,18 @@ namespace WindowsFormsApp
             LabDateDebutProjet.Text = projet.DateDebut.ToLongDateString();
             LabDateFinPrevueProjet.Text = projet.DateFinPrevue.ToLongDateString();
             // On met à jour l'affichage des exigences
-
+            DGVExigences.Rows.Clear();
+            foreach (Exigence row in FactoryService.CreateServiceExigence().GetExigenceByProjetId(idProjet))
+            {
+                string fonctionnelle = "Oui";
+                string type = "(Vide)";
+                if (!row.Fonctionnelle)
+                {
+                    fonctionnelle = "Non";
+                    type = FactoryService.CreateServiceTypeExigence().GetTypeExigenceById(row.Type).Label;
+                }
+                DGVExigences.Rows.Add(row.Id, row.Decription, fonctionnelle, type);
+            }
             // On met à jour l'affichage des tâches
 
             // On met à jour l'affichage des jalons

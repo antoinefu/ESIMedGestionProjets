@@ -38,7 +38,12 @@ namespace Service_DA.services
 
         public int InsertExigence(Exigence p_exigence)
         {
-            return new ExigenceTableAdapter().InsertExigence(p_exigence.Decription, p_exigence.Fonctionnelle, p_exigence.Type, p_exigence.Projet);
+            int result;
+            if(p_exigence.Type == 0)
+                result = new ExigenceTableAdapter().InsertExigence(p_exigence.Decription, p_exigence.Fonctionnelle, null, p_exigence.Projet);
+            else
+                result = new ExigenceTableAdapter().InsertExigence(p_exigence.Decription, p_exigence.Fonctionnelle, p_exigence.Type, p_exigence.Projet);
+            return result;
         }
 
         public void UpdateExigence(Exigence p_exigence)

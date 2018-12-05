@@ -15,5 +15,10 @@ namespace services.services
         {
             return FactoryServiceDA.CreateServicDATypeExigence().GetAllTypeExigences();
         }
+
+        public TypeExigence GetTypeExigenceById(int idTypeExigence)
+        {
+            return FactoryServiceDA.CreateServicDATypeExigence().GetTypeExigenceById(idTypeExigence);
+        }
     }
 }

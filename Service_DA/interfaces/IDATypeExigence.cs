@@ -10,5 +10,7 @@ namespace Service_DA.interfaces
     public interface IDATypeExigence
     {
         List<TypeExigence> GetAllTypeExigences();
+
+        TypeExigence GetTypeExigenceById(int idTypeExigence);
     }
 }

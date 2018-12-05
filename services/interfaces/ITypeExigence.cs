@@ -10,5 +10,7 @@ namespace services.interfaces
     public interface ITypeExigence
     {
         List<TypeExigence> GetAllTypeExigences();
+
+        TypeExigence GetTypeExigenceById(int idTypeExigence);
     }
 }
