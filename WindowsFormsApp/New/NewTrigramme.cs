@@ -13,8 +13,12 @@ namespace WindowsFormsApp
 {
     public partial class NewTrigramme : Form
     {
-        public NewTrigramme()
+
+        Form previousForm;
+
+        public NewTrigramme(Form p_previousForm)
         {
+            previousForm = p_previousForm;
             InitializeComponent();
         }
 
@@ -51,10 +55,7 @@ namespace WindowsFormsApp
                         caption = "Félicitation !";
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show(message, caption, buttons);
-                        if (Application.OpenForms["NewProjet"] != null)
-                        {
-                            (Application.OpenForms["NewProjet"] as NewProjet).Init();
-                        }
+                        previousForm.Refresh();
                     }
                     else
                     {

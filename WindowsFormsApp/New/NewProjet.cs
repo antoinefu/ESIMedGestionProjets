@@ -21,10 +21,10 @@ namespace WindowsFormsApp
         public NewProjet()
         {
             InitializeComponent();
-            Init();
+            Refresh();
         }
 
-        public void Init()
+        public override void Refresh()
         {
             CBResponsableProjet.Items.Clear();
             CBResponsableProjet.DisplayMember = "Text";
@@ -87,7 +87,7 @@ namespace WindowsFormsApp
                         // On refresh le form Main de l'app
                         if (Application.OpenForms["Main"] != null)
                         {
-                            (Application.OpenForms["Main"] as Main).Init();
+                            (Application.OpenForms["Main"] as Main).Refresh();
                         }
                         // On ferme la form d'ajout
                         this.Close();
@@ -98,7 +98,7 @@ namespace WindowsFormsApp
 
         private void BtnNewResponsableProjet_Click(object sender, EventArgs e)
         {
-            NewTrigramme frmNewTrigramme = new NewTrigramme();
+            NewTrigramme frmNewTrigramme = new NewTrigramme(this);
             frmNewTrigramme.ShowDialog(this);
             frmNewTrigramme.Dispose();
         }

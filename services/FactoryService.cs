@@ -24,5 +24,10 @@ namespace services
         {
             return new SProjet();
         }
+
+        public static IExigence CreateServiceExigence()
+        {
+            return new SExigence();
+        }
     }
 }

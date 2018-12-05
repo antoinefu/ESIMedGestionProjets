@@ -7,9 +7,12 @@
     }
 }
 
-namespace Service_DA.DataSetTableAdapters {
-    
-    
+namespace Service_DA.DataSetTableAdapters
+{
+    partial class ProjetTableAdapter
+    {
+    }
+
     public partial class TrigrammeTableAdapter {
     }
 }

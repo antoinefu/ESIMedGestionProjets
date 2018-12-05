@@ -24,5 +24,10 @@ namespace Service_DA
         {
             return new SDAProjet();
         }
+
+        public static IDAExigence CreateServiceDAExigence()
+        {
+            return new SDAExigence();
+        }
     }
 }

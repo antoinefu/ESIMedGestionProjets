@@ -67,6 +67,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="FactoryServiceDA.cs" />
+    <Compile Include="interfaces\IDAExigence.cs" />
     <Compile Include="interfaces\IDAProjet.cs" />
     <Compile Include="interfaces\IDATypeExigence.cs" />
     <Compile Include="interfaces\IDATrigramme.cs" />
@@ -76,6 +77,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="services\SDAExigence.cs" />
     <Compile Include="services\SDAProjet.cs" />
     <Compile Include="services\SDATrigramme.cs" />
     <Compile Include="services\SDATypeExigence.cs" />

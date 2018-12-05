@@ -46,9 +46,9 @@
             // BtnNewProjet
             // 
             this.BtnNewProjet.BackColor = System.Drawing.Color.White;
-            this.BtnNewProjet.Location = new System.Drawing.Point(24, 159);
+            this.BtnNewProjet.Location = new System.Drawing.Point(64, 169);
             this.BtnNewProjet.Name = "BtnNewProjet";
-            this.BtnNewProjet.Size = new System.Drawing.Size(343, 38);
+            this.BtnNewProjet.Size = new System.Drawing.Size(276, 38);
             this.BtnNewProjet.TabIndex = 0;
             this.BtnNewProjet.Text = "Créer le projet";
             this.BtnNewProjet.UseVisualStyleBackColor = false;

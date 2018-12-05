@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FactoryService.cs" />
+    <Compile Include="interfaces\IExigence.cs" />
     <Compile Include="interfaces\IProjet.cs" />
     <Compile Include="interfaces\ITrigramme.cs" />
     <Compile Include="interfaces\ITypeExigence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\SExigence.cs" />
     <Compile Include="services\SProjet.cs" />
     <Compile Include="services\STrigramme.cs" />
     <Compile Include="services\STypeExigence.cs" />

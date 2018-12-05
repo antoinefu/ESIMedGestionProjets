@@ -38,15 +38,15 @@
             this.TabExigences = new System.Windows.Forms.TabPage();
             this.TabTaches = new System.Windows.Forms.TabPage();
             this.TabJalons = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PnlProjet = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.LabDateFinPrevueProjet = new System.Windows.Forms.Label();
             this.LabDateDebutProjet = new System.Windows.Forms.Label();
             this.LabResponsableProjet = new System.Windows.Forms.Label();
             this.LabTrigrammeProjet = new System.Windows.Forms.Label();
             this.LabNomProjet = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnDeleteProjet = new System.Windows.Forms.Button();
+            this.BtnUpdateProjet = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,9 +54,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.BtnAddExigence = new System.Windows.Forms.Button();
+            this.BtnUpdateExigence = new System.Windows.Forms.Button();
+            this.BtnDeleteExigence = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.TabExigences.SuspendLayout();
+            this.PnlProjet.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnNewProjet
@@ -131,6 +135,7 @@
             this.tabControl1.Controls.Add(this.TabExigences);
             this.tabControl1.Controls.Add(this.TabTaches);
             this.tabControl1.Controls.Add(this.TabJalons);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(20, 124);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -140,58 +145,62 @@
             // TabExigences
             // 
             this.TabExigences.BackColor = System.Drawing.Color.White;
-            this.TabExigences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabExigences.Location = new System.Drawing.Point(4, 22);
+            this.TabExigences.Controls.Add(this.BtnDeleteExigence);
+            this.TabExigences.Controls.Add(this.BtnUpdateExigence);
+            this.TabExigences.Controls.Add(this.BtnAddExigence);
+            this.TabExigences.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabExigences.Location = new System.Drawing.Point(4, 25);
             this.TabExigences.Name = "TabExigences";
             this.TabExigences.Padding = new System.Windows.Forms.Padding(3);
-            this.TabExigences.Size = new System.Drawing.Size(954, 430);
+            this.TabExigences.Size = new System.Drawing.Size(954, 427);
             this.TabExigences.TabIndex = 0;
-            this.TabExigences.Text = "Nom du projet : ";
+            this.TabExigences.Text = "Exigences";
             // 
             // TabTaches
             // 
             this.TabTaches.BackColor = System.Drawing.Color.White;
             this.TabTaches.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabTaches.Location = new System.Drawing.Point(4, 22);
+            this.TabTaches.Location = new System.Drawing.Point(4, 25);
             this.TabTaches.Name = "TabTaches";
             this.TabTaches.Padding = new System.Windows.Forms.Padding(3);
-            this.TabTaches.Size = new System.Drawing.Size(954, 366);
+            this.TabTaches.Size = new System.Drawing.Size(954, 427);
             this.TabTaches.TabIndex = 1;
-            this.TabTaches.Text = "Mes tâches";
+            this.TabTaches.Text = "Tâches";
             // 
             // TabJalons
             // 
             this.TabJalons.BackColor = System.Drawing.Color.White;
             this.TabJalons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabJalons.Location = new System.Drawing.Point(4, 22);
+            this.TabJalons.Location = new System.Drawing.Point(4, 25);
             this.TabJalons.Name = "TabJalons";
-            this.TabJalons.Size = new System.Drawing.Size(954, 366);
+            this.TabJalons.Size = new System.Drawing.Size(954, 427);
             this.TabJalons.TabIndex = 2;
-            this.TabJalons.Text = "Mes jalons";
+            this.TabJalons.Text = "Jalons";
             // 
-            // panel2
+            // PnlProjet
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.LabDateFinPrevueProjet);
-            this.panel2.Controls.Add(this.LabDateDebutProjet);
-            this.panel2.Controls.Add(this.LabResponsableProjet);
-            this.panel2.Controls.Add(this.LabTrigrammeProjet);
-            this.panel2.Controls.Add(this.LabNomProjet);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Location = new System.Drawing.Point(12, 88);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(995, 601);
-            this.panel2.TabIndex = 0;
+            this.PnlProjet.BackColor = System.Drawing.Color.Silver;
+            this.PnlProjet.Controls.Add(this.label13);
+            this.PnlProjet.Controls.Add(this.LabDateFinPrevueProjet);
+            this.PnlProjet.Controls.Add(this.LabDateDebutProjet);
+            this.PnlProjet.Controls.Add(this.LabResponsableProjet);
+            this.PnlProjet.Controls.Add(this.LabTrigrammeProjet);
+            this.PnlProjet.Controls.Add(this.LabNomProjet);
+            this.PnlProjet.Controls.Add(this.BtnDeleteProjet);
+            this.PnlProjet.Controls.Add(this.BtnUpdateProjet);
+            this.PnlProjet.Controls.Add(this.label7);
+            this.PnlProjet.Controls.Add(this.label8);
+            this.PnlProjet.Controls.Add(this.label9);
+            this.PnlProjet.Controls.Add(this.label6);
+            this.PnlProjet.Controls.Add(this.label5);
+            this.PnlProjet.Controls.Add(this.label4);
+            this.PnlProjet.Controls.Add(this.label3);
+            this.PnlProjet.Controls.Add(this.tabControl1);
+            this.PnlProjet.Location = new System.Drawing.Point(12, 88);
+            this.PnlProjet.Name = "PnlProjet";
+            this.PnlProjet.Size = new System.Drawing.Size(995, 601);
+            this.PnlProjet.TabIndex = 0;
+            this.PnlProjet.Visible = false;
             // 
             // label13
             // 
@@ -242,29 +251,31 @@
             this.LabNomProjet.Size = new System.Drawing.Size(0, 13);
             this.LabNomProjet.TabIndex = 19;
             // 
-            // button3
+            // BtnDeleteProjet
             // 
-            this.button3.BackColor = System.Drawing.Color.Maroon;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(798, 76);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 35);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = false;
+            this.BtnDeleteProjet.BackColor = System.Drawing.Color.Maroon;
+            this.BtnDeleteProjet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeleteProjet.ForeColor = System.Drawing.Color.White;
+            this.BtnDeleteProjet.Location = new System.Drawing.Point(798, 76);
+            this.BtnDeleteProjet.Name = "BtnDeleteProjet";
+            this.BtnDeleteProjet.Size = new System.Drawing.Size(180, 35);
+            this.BtnDeleteProjet.TabIndex = 18;
+            this.BtnDeleteProjet.Text = "Supprimer";
+            this.BtnDeleteProjet.UseVisualStyleBackColor = false;
+            this.BtnDeleteProjet.Click += new System.EventHandler(this.BtnDeleteProjet_Click);
             // 
-            // button2
+            // BtnUpdateProjet
             // 
-            this.button2.BackColor = System.Drawing.Color.Maroon;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(798, 30);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 35);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Mettre à jour";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BtnUpdateProjet.BackColor = System.Drawing.Color.Maroon;
+            this.BtnUpdateProjet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUpdateProjet.ForeColor = System.Drawing.Color.White;
+            this.BtnUpdateProjet.Location = new System.Drawing.Point(798, 30);
+            this.BtnUpdateProjet.Name = "BtnUpdateProjet";
+            this.BtnUpdateProjet.Size = new System.Drawing.Size(180, 35);
+            this.BtnUpdateProjet.TabIndex = 17;
+            this.BtnUpdateProjet.Text = "Mettre à jour";
+            this.BtnUpdateProjet.UseVisualStyleBackColor = false;
+            this.BtnUpdateProjet.Click += new System.EventHandler(this.BtnUpdateProjet_Click);
             // 
             // label7
             // 
@@ -336,12 +347,49 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Infos sur le projet Projet";
             // 
+            // BtnAddExigence
+            // 
+            this.BtnAddExigence.BackColor = System.Drawing.Color.Maroon;
+            this.BtnAddExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddExigence.ForeColor = System.Drawing.Color.White;
+            this.BtnAddExigence.Location = new System.Drawing.Point(8, 387);
+            this.BtnAddExigence.Name = "BtnAddExigence";
+            this.BtnAddExigence.Size = new System.Drawing.Size(180, 34);
+            this.BtnAddExigence.TabIndex = 0;
+            this.BtnAddExigence.Text = "Nouveau";
+            this.BtnAddExigence.UseVisualStyleBackColor = false;
+            this.BtnAddExigence.Click += new System.EventHandler(this.BtnAddExigence_Click);
+            // 
+            // BtnUpdateExigence
+            // 
+            this.BtnUpdateExigence.BackColor = System.Drawing.Color.Maroon;
+            this.BtnUpdateExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUpdateExigence.ForeColor = System.Drawing.Color.White;
+            this.BtnUpdateExigence.Location = new System.Drawing.Point(195, 387);
+            this.BtnUpdateExigence.Name = "BtnUpdateExigence";
+            this.BtnUpdateExigence.Size = new System.Drawing.Size(180, 34);
+            this.BtnUpdateExigence.TabIndex = 1;
+            this.BtnUpdateExigence.Text = "Mettre à jour";
+            this.BtnUpdateExigence.UseVisualStyleBackColor = false;
+            // 
+            // BtnDeleteExigence
+            // 
+            this.BtnDeleteExigence.BackColor = System.Drawing.Color.Maroon;
+            this.BtnDeleteExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeleteExigence.ForeColor = System.Drawing.Color.White;
+            this.BtnDeleteExigence.Location = new System.Drawing.Point(378, 387);
+            this.BtnDeleteExigence.Name = "BtnDeleteExigence";
+            this.BtnDeleteExigence.Size = new System.Drawing.Size(180, 34);
+            this.BtnDeleteExigence.TabIndex = 2;
+            this.BtnDeleteExigence.Text = "Supprimer";
+            this.BtnDeleteExigence.UseVisualStyleBackColor = false;
+            // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(1019, 701);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.PnlProjet);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -352,8 +400,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.TabExigences.ResumeLayout(false);
+            this.PnlProjet.ResumeLayout(false);
+            this.PnlProjet.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -369,7 +418,7 @@
         private System.Windows.Forms.TabPage TabExigences;
         private System.Windows.Forms.TabPage TabTaches;
         private System.Windows.Forms.TabPage TabJalons;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PnlProjet;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label LabDateFinPrevueProjet;
@@ -377,13 +426,16 @@
         private System.Windows.Forms.Label LabResponsableProjet;
         private System.Windows.Forms.Label LabTrigrammeProjet;
         private System.Windows.Forms.Label LabNomProjet;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnDeleteProjet;
+        private System.Windows.Forms.Button BtnUpdateProjet;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtnAddExigence;
+        private System.Windows.Forms.Button BtnDeleteExigence;
+        private System.Windows.Forms.Button BtnUpdateExigence;
     }
 }

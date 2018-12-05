@@ -27,3 +27,7 @@ D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\Wi
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.NewTrigramme.resources
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.NewProjet.resources
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.Main.resources
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.Update.UpdateProjet.resources
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\bin\Debug\Database.mdf
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\bin\Debug\Database_log.ldf
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.New.NewExigence.resources

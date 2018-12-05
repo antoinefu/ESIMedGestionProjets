@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp.New;
+using WindowsFormsApp.Update;
 
 namespace WindowsFormsApp
 {
@@ -17,6 +19,7 @@ namespace WindowsFormsApp
 
         string message;
         string caption;
+        public int idProjet; 
 
         public Main()
         {
@@ -30,7 +33,7 @@ namespace WindowsFormsApp
             frmNewProjet.Dispose();
         }
 
-        public void Init()
+        public void Refresh()
         {
             // On charge les différents projets dans le combobox
             CBListeProjets.Items.Clear();
@@ -40,11 +43,19 @@ namespace WindowsFormsApp
             {
                 CBListeProjets.Items.Add(new { Text = projet.Trigramme + " - " + projet.Nom, Value = projet.Id });
             }
+            CBListeProjets.SelectedItem = null;
+        }
+
+        public void Init()
+        {
+            Refresh();
+            CBListeProjets.Text = "";
+            PnlProjet.Visible = false;
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-            Init();
+            Refresh();
         }
 
         private void BtnNewProjet_Click_1(object sender, EventArgs e)
@@ -65,22 +76,61 @@ namespace WindowsFormsApp
             }
             else
             {
-                // On récupère l'id du projet selectionné
-                int idProjet = (CBListeProjets.SelectedItem as dynamic).Value;
-                // On met à jour l'affichage des infos du projet
-                Projet projet = FactoryService.CreateServiceProjet().GetProjetById(idProjet);
-                LabNomProjet.Text = projet.Nom;
-                LabTrigrammeProjet.Text = projet.Trigramme;
-                LabResponsableProjet.Text = FactoryService.CreateServiceTrigramme().GetTrigrammeById(projet.Responsable).Nom;
-                LabDateDebutProjet.Text = projet.DateDebut.ToLongDateString();
-                LabDateFinPrevueProjet.Text = projet.DateFinPrevue.ToLongDateString();
-                // On met à jour l'affichage des exigences
-
-                // On met à jour l'affichage des tâches
-
-                // On met à jour l'affichage des jalons
+                idProjet = (CBListeProjets.SelectedItem as dynamic).Value;
+                RefreshInfosProjet(idProjet);
             }
 
+        }
+
+        public void RefreshInfosProjet(int p_idProjet)
+        {
+            // On refresh le header
+            Refresh();
+            // On affiche le panl projet
+            PnlProjet.Visible = true;
+            // On met à jour l'affichage des infos du projet
+            Projet projet = FactoryService.CreateServiceProjet().GetProjetById(p_idProjet);
+            LabNomProjet.Text = projet.Nom;
+            LabTrigrammeProjet.Text = projet.Trigramme;
+            LabResponsableProjet.Text = FactoryService.CreateServiceTrigramme().GetTrigrammeById(projet.Responsable).Nom;
+            LabDateDebutProjet.Text = projet.DateDebut.ToLongDateString();
+            LabDateFinPrevueProjet.Text = projet.DateFinPrevue.ToLongDateString();
+            // On met à jour l'affichage des exigences
+
+            // On met à jour l'affichage des tâches
+
+            // On met à jour l'affichage des jalons
+        }
+
+        private void BtnDeleteProjet_Click(object sender, EventArgs e)
+        {
+            // On demande à l'utilisateur la confirmation de la suppression
+            if (MessageBox.Show("Voyulez-vous vraiment supprimer définitivement ce proejt ?", "Suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                // On effectue la suppression
+                FactoryService.CreateServiceProjet().DeleteProjet(idProjet);
+                // On reinitialise l'ffichage
+                Init();
+                // On confirme la suppression à l'utilisateur
+                message = "La suppression a bien été effectuée.";
+                caption = "Félicitation !";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void BtnUpdateProjet_Click(object sender, EventArgs e)
+        {
+            UpdateProjet frmUpdateProjet = new UpdateProjet();
+            frmUpdateProjet.ShowDialog(this);
+            frmUpdateProjet.Dispose();
+        }
+
+        private void BtnAddExigence_Click(object sender, EventArgs e)
+        {
+            NewExigence frmNewExigence = new NewExigence();
+            frmNewExigence.ShowDialog(this);
+            frmNewExigence.Dispose();
         }
     }
 }
