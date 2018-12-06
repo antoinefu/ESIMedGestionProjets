@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnNewProjet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.CBListeProjets = new System.Windows.Forms.ComboBox();
@@ -37,7 +37,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabExigences = new System.Windows.Forms.TabPage();
+            this.BtnDeleteExigence = new System.Windows.Forms.Button();
             this.DGVExigences = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.identifiant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnAddExigence = new System.Windows.Forms.Button();
             this.TabTaches = new System.Windows.Forms.TabPage();
             this.TabJalons = new System.Windows.Forms.TabPage();
@@ -57,12 +62,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fonctionnelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabExigences.SuspendLayout();
@@ -146,54 +146,101 @@
             this.tabControl1.Location = new System.Drawing.Point(20, 124);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(962, 456);
+            this.tabControl1.Size = new System.Drawing.Size(962, 491);
             this.tabControl1.TabIndex = 9;
             // 
             // TabExigences
             // 
             this.TabExigences.BackColor = System.Drawing.Color.White;
-            this.TabExigences.Controls.Add(this.button2);
-            this.TabExigences.Controls.Add(this.button1);
+            this.TabExigences.Controls.Add(this.label10);
+            this.TabExigences.Controls.Add(this.BtnDeleteExigence);
             this.TabExigences.Controls.Add(this.DGVExigences);
             this.TabExigences.Controls.Add(this.BtnAddExigence);
             this.TabExigences.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabExigences.Location = new System.Drawing.Point(4, 25);
             this.TabExigences.Name = "TabExigences";
             this.TabExigences.Padding = new System.Windows.Forms.Padding(3);
-            this.TabExigences.Size = new System.Drawing.Size(954, 427);
+            this.TabExigences.Size = new System.Drawing.Size(954, 462);
             this.TabExigences.TabIndex = 0;
             this.TabExigences.Text = "Exigences";
             // 
+            // BtnDeleteExigence
+            // 
+            this.BtnDeleteExigence.BackColor = System.Drawing.Color.Maroon;
+            this.BtnDeleteExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeleteExigence.ForeColor = System.Drawing.Color.White;
+            this.BtnDeleteExigence.Location = new System.Drawing.Point(212, 422);
+            this.BtnDeleteExigence.Name = "BtnDeleteExigence";
+            this.BtnDeleteExigence.Size = new System.Drawing.Size(180, 34);
+            this.BtnDeleteExigence.TabIndex = 4;
+            this.BtnDeleteExigence.Text = "Supprimer";
+            this.BtnDeleteExigence.UseVisualStyleBackColor = false;
+            this.BtnDeleteExigence.Click += new System.EventHandler(this.BtnDeleteExigence_Click);
+            // 
             // DGVExigences
             // 
+            this.DGVExigences.AllowUserToAddRows = false;
             this.DGVExigences.BackgroundColor = System.Drawing.Color.White;
             this.DGVExigences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVExigences.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.identifiant,
             this.Description,
-            this.Fonctionnelle,
             this.Type});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVExigences.DefaultCellStyle = dataGridViewCellStyle1;
-            this.DGVExigences.Location = new System.Drawing.Point(26, 18);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVExigences.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGVExigences.Location = new System.Drawing.Point(26, 22);
+            this.DGVExigences.MultiSelect = false;
             this.DGVExigences.Name = "DGVExigences";
             this.DGVExigences.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVExigences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVExigences.Size = new System.Drawing.Size(903, 362);
+            this.DGVExigences.Size = new System.Drawing.Size(903, 394);
             this.DGVExigences.TabIndex = 3;
+            this.DGVExigences.DoubleClick += new System.EventHandler(this.DGVExigences_DoubleClick);
+            // 
+            // Id
+            // 
+            this.Id.FillWeight = 20F;
+            this.Id.Frozen = true;
+            this.Id.HeaderText = "Id.";
+            this.Id.Name = "Id";
+            this.Id.Width = 5;
+            // 
+            // identifiant
+            // 
+            this.identifiant.Frozen = true;
+            this.identifiant.HeaderText = "Identifiant";
+            this.identifiant.Name = "identifiant";
+            this.identifiant.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.Frozen = true;
+            this.Description.HeaderText = "Descriptif";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 600;
+            // 
+            // Type
+            // 
+            this.Type.Frozen = true;
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Width = 190;
             // 
             // BtnAddExigence
             // 
             this.BtnAddExigence.BackColor = System.Drawing.Color.Maroon;
             this.BtnAddExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAddExigence.ForeColor = System.Drawing.Color.White;
-            this.BtnAddExigence.Location = new System.Drawing.Point(26, 386);
+            this.BtnAddExigence.Location = new System.Drawing.Point(26, 422);
             this.BtnAddExigence.Name = "BtnAddExigence";
             this.BtnAddExigence.Size = new System.Drawing.Size(180, 34);
             this.BtnAddExigence.TabIndex = 0;
@@ -208,7 +255,7 @@
             this.TabTaches.Location = new System.Drawing.Point(4, 25);
             this.TabTaches.Name = "TabTaches";
             this.TabTaches.Padding = new System.Windows.Forms.Padding(3);
-            this.TabTaches.Size = new System.Drawing.Size(954, 427);
+            this.TabTaches.Size = new System.Drawing.Size(954, 462);
             this.TabTaches.TabIndex = 1;
             this.TabTaches.Text = "Tâches";
             // 
@@ -218,7 +265,7 @@
             this.TabJalons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabJalons.Location = new System.Drawing.Point(4, 25);
             this.TabJalons.Name = "TabJalons";
-            this.TabJalons.Size = new System.Drawing.Size(954, 427);
+            this.TabJalons.Size = new System.Drawing.Size(954, 462);
             this.TabJalons.TabIndex = 2;
             this.TabJalons.Text = "Jalons";
             // 
@@ -243,7 +290,7 @@
             this.PnlProjet.Controls.Add(this.tabControl1);
             this.PnlProjet.Location = new System.Drawing.Point(12, 88);
             this.PnlProjet.Name = "PnlProjet";
-            this.PnlProjet.Size = new System.Drawing.Size(995, 601);
+            this.PnlProjet.Size = new System.Drawing.Size(995, 631);
             this.PnlProjet.TabIndex = 0;
             this.PnlProjet.Visible = false;
             // 
@@ -392,67 +439,22 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Infos sur le projet Projet";
             // 
-            // button1
+            // label10
             // 
-            this.button1.BackColor = System.Drawing.Color.Maroon;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(398, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 34);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Supprimer";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Maroon;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(212, 387);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 34);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Modifier";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // Id
-            // 
-            this.Id.FillWeight = 20F;
-            this.Id.Frozen = true;
-            this.Id.HeaderText = "Id.";
-            this.Id.Name = "Id";
-            this.Id.Width = 50;
-            // 
-            // Description
-            // 
-            this.Description.Frozen = true;
-            this.Description.HeaderText = "Descriptif";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 550;
-            // 
-            // Fonctionnelle
-            // 
-            this.Fonctionnelle.Frozen = true;
-            this.Fonctionnelle.HeaderText = "Fonctionnelle ?";
-            this.Fonctionnelle.Name = "Fonctionnelle";
-            this.Fonctionnelle.ReadOnly = true;
-            this.Fonctionnelle.Width = 110;
-            // 
-            // Type
-            // 
-            this.Type.Frozen = true;
-            this.Type.HeaderText = "Type";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Width = 160;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(797, 441);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(151, 15);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "(Double click pour mdifier)";
             // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(1019, 701);
+            this.ClientSize = new System.Drawing.Size(1019, 731);
             this.Controls.Add(this.PnlProjet);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -465,6 +467,7 @@
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.TabExigences.ResumeLayout(false);
+            this.TabExigences.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVExigences)).EndInit();
             this.PnlProjet.ResumeLayout(false);
             this.PnlProjet.PerformLayout();
@@ -501,11 +504,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnAddExigence;
         private System.Windows.Forms.DataGridView DGVExigences;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnDeleteExigence;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn identifiant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fonctionnelle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -9,16 +9,16 @@ namespace bean
     public class Exigence
     {
         public int Id { get; set; }
+        public string Identifiant { get; set; }
         public string Decription { get; set; }
-        public bool Fonctionnelle { get; set; }
         public int Type { get; set; }
         public int Projet { get; set; }
 
-        public Exigence(int p_id, string p_description, bool p_fonctionnelle, int p_type, int p_projet)
+        public Exigence(int p_id, string p_identifiant, string p_description, int p_type, int p_projet)
         {
             this.Id = p_id;
             this.Decription = p_description;
-            this.Fonctionnelle = p_fonctionnelle;
+            this.Identifiant = p_identifiant;
             this.Type = p_type;
             this.Projet = p_projet;
         }

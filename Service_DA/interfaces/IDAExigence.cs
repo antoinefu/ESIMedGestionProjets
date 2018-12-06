@@ -18,5 +18,7 @@ namespace Service_DA.interfaces
         void UpdateExigence(Exigence p_exigence);
 
         void DeleteExigence(int p_idExigence);
+
+        bool IfIdentifiantExisting(int p_idProjet, string p_identifiantExigence);
     }
 }

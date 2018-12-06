@@ -4,6 +4,9 @@
 
     partial class DataSet
     {
+        partial class ExigenceDataTable
+        {
+        }
     }
 }
 

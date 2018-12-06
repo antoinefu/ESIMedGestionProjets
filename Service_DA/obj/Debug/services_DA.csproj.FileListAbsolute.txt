@@ -21,10 +21,3 @@ D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\obj\Debug\Service
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\obj\Debug\Service_DA.dll
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\obj\Debug\Service_DA.pdb
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\bin\Debug\app.config
-D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\bin\Debug\Database.mdf
-D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\bin\Debug\Database_log.ldf
-D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\bin\Debug\DataSet.cs
-D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\bin\Debug\DataSet.Designer.cs
-D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\bin\Debug\DataSet.xsc
-D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\bin\Debug\DataSet.xsd
-D:\Visual Studio 2017 Projects\ESIMedGestionProjets\Service_DA\bin\Debug\DataSet.xss

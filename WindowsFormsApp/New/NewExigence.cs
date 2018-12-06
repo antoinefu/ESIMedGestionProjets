@@ -17,6 +17,7 @@ namespace WindowsFormsApp.New
 
         string message;
         string caption;
+        int idProjet = (Application.OpenForms["Main"] as Main).idProjet;
 
         public NewExigence()
         {
@@ -29,8 +30,6 @@ namespace WindowsFormsApp.New
                 CBTypeExigences.Items.Add(new { Text = type.Label, Value = type.Id });
             }
             CBTypeExigences.SelectedIndex = 0;
-            RBYes.Checked = true;
-            CBTypeExigences.Enabled = false;
         }
 
         private void NewExigence_Load(object sender, EventArgs e)
@@ -38,20 +37,10 @@ namespace WindowsFormsApp.New
 
         }
 
-        private void RBNo_CheckedChanged(object sender, EventArgs e)
-        {
-            CBTypeExigences.Enabled = true;
-        }
-
-        private void RBYes_CheckedChanged(object sender, EventArgs e)
-        {
-            CBTypeExigences.Enabled = false;
-        }
-
         private void BtnAddExigence_Click(object sender, EventArgs e)
         {
             // On verifieque tous les champs on été saisis
-            if (TBDescription.Text == "")
+            if (TBDescription.Text == "" || TBIdentifiantExigence.Text == "" || CBTypeExigences.SelectedItem == null)
             {
                 message = "Vous devez indiquer une description.";
                 caption = "Oups !";
@@ -60,30 +49,69 @@ namespace WindowsFormsApp.New
             }
             else
             {
-                bool fonctionnelle = true;
-                int type = 0;
-                int idProjet = (Application.OpenForms["Main"] as Main).idProjet; ;
-                if (RBNo.Checked)
+                // On verifie que l'identifiant n'existe pas déjà
+                if (FactoryService.CreateServiceExigence().IfIdentifiantExisting(idProjet, TBIdentifiantExigence.Text))
                 {
-                    fonctionnelle = false;
-                    type = (CBTypeExigences.SelectedItem as dynamic).Value;
-                }
-                if (FactoryService.CreateServiceExigence().InsertExigence(TBDescription.Text, fonctionnelle, type, idProjet) == 1)
-                {
-                    message = "L'insertion a bien été effectuée.";
-                    caption = "Félicitations !";
+                    message = "Cette identifiant est déjà utilisé pour ce projet.";
+                    caption = "Oups !";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show(message, caption, buttons);
                 }
                 else
                 {
-                    message = "Une erreur est survenue. L'insertion n'a pas pu être effectuée.";
-                    caption = "Oups !";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show(message, caption, buttons);
+                    int type = (CBTypeExigences.SelectedItem as dynamic).Value;
+                    if (FactoryService.CreateServiceExigence().InsertExigence(TBIdentifiantExigence.Text, TBDescription.Text, type, idProjet) == 1)
+                    {
+                        message = "L'insertion a bien été effectuée.";
+                        caption = "Félicitations !";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+                        // On refresh le form Main de l'app
+                        if (Application.OpenForms["Main"] != null)
+                        {
+                            (Application.OpenForms["Main"] as Main).RefreshInfosProjet(idProjet);
+                        }
+                    }
+                    else
+                    {
+                        message = "Une erreur est survenue. L'insertion n'a pas pu être effectuée.";
+                        caption = "Oups !";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+                    }
+                    this.Close();
                 }
-                this.Close();
             }
+        }
+
+        private void TBDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CBTypeExigences_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBIdentifiantExigence_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

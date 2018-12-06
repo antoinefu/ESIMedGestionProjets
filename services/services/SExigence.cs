@@ -26,14 +26,19 @@ namespace services.services
             return FactoryServiceDA.CreateServiceDAExigence().GetExigenceByProjetId(p_idProjet);
         }
 
-        public int InsertExigence(string p_description, bool p_fonctionnelle, int p_type, int p_projet)
+        public bool IfIdentifiantExisting(int p_idProjet, string p_identifiantExigence)
         {
-            return FactoryServiceDA.CreateServiceDAExigence().InsertExigence(new Exigence(0, p_description, p_fonctionnelle, p_type, p_projet));
+            return FactoryServiceDA.CreateServiceDAExigence().IfIdentifiantExisting(p_idProjet, p_identifiantExigence);
         }
 
-        public void UpdateExigence(int p_id, string p_description, bool p_fonctionnelle, int p_type, int p_projet)
+        public int InsertExigence(string p_identifiant, string p_description, int p_type, int p_projet)
         {
-            FactoryServiceDA.CreateServiceDAExigence().UpdateExigence(new Exigence(p_id, p_description, p_fonctionnelle, p_type, p_projet));
+            return FactoryServiceDA.CreateServiceDAExigence().InsertExigence(new Exigence(0, p_identifiant, p_description, p_type, p_projet));
+        }
+
+        public void UpdateExigence(int p_id, string p_identifiant, string p_description, int p_type, int p_projet)
+        {
+            FactoryServiceDA.CreateServiceDAExigence().UpdateExigence(new Exigence(p_id, p_identifiant, p_description, p_type, p_projet));
         }
     }
 }

@@ -24,6 +24,7 @@ namespace WindowsFormsApp
         public Main()
         {
             InitializeComponent();
+            DGVExigences.Columns[0].Visible = false;
         }
 
         private void BtnNewProjet_Click(object sender, EventArgs e)
@@ -57,6 +58,8 @@ namespace WindowsFormsApp
         {
             Refresh();
         }
+
+
 
         private void BtnNewProjet_Click_1(object sender, EventArgs e)
         {
@@ -99,15 +102,9 @@ namespace WindowsFormsApp
             DGVExigences.Rows.Clear();
             foreach (Exigence row in FactoryService.CreateServiceExigence().GetExigenceByProjetId(idProjet))
             {
-                string fonctionnelle = "Oui";
-                string type = "(Vide)";
-                if (!row.Fonctionnelle)
-                {
-                    fonctionnelle = "Non";
-                    type = FactoryService.CreateServiceTypeExigence().GetTypeExigenceById(row.Type).Label;
-                }
-                DGVExigences.Rows.Add(row.Id, row.Decription, fonctionnelle, type);
+                DGVExigences.Rows.Add(row.Id, row.Identifiant, row.Decription, FactoryService.CreateServiceTypeExigence().GetTypeExigenceById(row.Type).Label);
             }
+            DGVExigences.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             // On met à jour l'affichage des tâches
 
             // On met à jour l'affichage des jalons
@@ -142,6 +139,45 @@ namespace WindowsFormsApp
             NewExigence frmNewExigence = new NewExigence();
             frmNewExigence.ShowDialog(this);
             frmNewExigence.Dispose();
+        }
+
+        private void BtnUpdateExigence_Click(object sender, EventArgs e)
+        {
+            if (DGVExigences.SelectedCells.Count > 0)
+            {
+                int id = (int)DGVExigences.SelectedCells[0].Value;
+            }
+            else
+            {
+                message = "Il faut selectionné une exigence à modifier.";
+                caption = "Oups";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void DGVExigences_DoubleClick(object sender, EventArgs e)
+        {
+            UpdateExigence frmUpdateExigence = new UpdateExigence(Int32.Parse(DGVExigences.CurrentRow.Cells[0].Value.ToString()));
+            frmUpdateExigence.ShowDialog(this);
+            frmUpdateExigence.Dispose();
+        }
+
+        private void BtnDeleteExigence_Click(object sender, EventArgs e)
+        {
+            // On demande à l'utilisateur la confirmation de la suppression
+            if (MessageBox.Show("Voyulez-vous vraiment supprimer définitivement cette exigence ?", "Suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                // On effectue la suppression
+                FactoryService.CreateServiceExigence().DeleteExigence(Int32.Parse(DGVExigences.CurrentRow.Cells[0].Value.ToString()));
+                // On reinitialise l'ffichage
+                RefreshInfosProjet(idProjet);
+                // On confirme la suppression à l'utilisateur
+                message = "La suppression a bien été effectuée.";
+                caption = "Félicitation !";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
         }
     }
 }

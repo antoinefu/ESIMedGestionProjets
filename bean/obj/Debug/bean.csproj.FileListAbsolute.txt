@@ -8,3 +8,4 @@ D:\Visual Studio 2017 Projects\ESIMedGestionProjets\bean\bin\Debug\bean.pdb
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\bean\obj\Debug\bean.csproj.CoreCompileInputs.cache
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\bean\obj\Debug\bean.dll
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\bean\obj\Debug\bean.pdb
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\bean\obj\Debug\bean.csprojAssemblyReference.cache
