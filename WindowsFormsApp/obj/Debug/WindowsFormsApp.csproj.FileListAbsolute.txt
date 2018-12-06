@@ -30,3 +30,4 @@ D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\Wi
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.Update.UpdateProjet.resources
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.New.NewExigence.resources
 D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\obj\Debug\WindowsFormsApp.Update.UpdateExigence.resources
+D:\Visual Studio 2017 Projects\ESIMedGestionProjets\WindowsFormsApp\bin\Debug\app.config

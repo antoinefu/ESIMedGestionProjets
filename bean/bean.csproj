@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exigence.cs" />
+    <Compile Include="Jalon.cs" />
     <Compile Include="Projet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tache.cs" />
     <Compile Include="Trigramme.cs" />
     <Compile Include="TypeExigence.cs" />
   </ItemGroup>

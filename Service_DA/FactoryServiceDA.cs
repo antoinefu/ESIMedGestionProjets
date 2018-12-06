@@ -29,5 +29,10 @@ namespace Service_DA
         {
             return new SDAExigence();
         }
+
+        public static IDATache CreateServiceDATache()
+        {
+            return new SDATache();
+        }
     }
 }

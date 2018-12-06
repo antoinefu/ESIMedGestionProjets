@@ -12,6 +12,10 @@
 
 namespace Service_DA.DataSetTableAdapters
 {
+    partial class JalonTableAdapter
+    {
+    }
+
     partial class ProjetTableAdapter
     {
     }
