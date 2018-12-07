@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="FactoryServiceDA.cs" />
     <Compile Include="interfaces\IDAExigence.cs" />
+    <Compile Include="interfaces\IDAJalon.cs" />
     <Compile Include="interfaces\IDAProjet.cs" />
     <Compile Include="interfaces\IDATache.cs" />
     <Compile Include="interfaces\IDATypeExigence.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="services\SDATache.cs" />
     <Compile Include="services\SDATrigramme.cs" />
     <Compile Include="services\SDATypeExigence.cs" />
+    <Compile Include="services\SDAJalon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

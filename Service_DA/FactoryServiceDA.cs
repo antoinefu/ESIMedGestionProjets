@@ -34,5 +34,9 @@ namespace Service_DA
         {
             return new SDATache();
         }
+        public static IDAJalon CreateServiceDAJalon()
+        {
+            return new SDAJalon();
+        }
     }
 }

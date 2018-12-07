@@ -29,5 +29,10 @@ namespace services
         {
             return new SExigence();
         }
+
+        public static IJalon CreateServiceJalon()
+        {
+            return new SJalon();
+        }
     }
 }

@@ -72,6 +72,12 @@
     <Compile Include="New\NewExigence.Designer.cs">
       <DependentUpon>NewExigence.cs</DependentUpon>
     </Compile>
+    <Compile Include="New\NewJalon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\NewJalon.Designer.cs">
+      <DependentUpon>NewJalon.cs</DependentUpon>
+    </Compile>
     <Compile Include="New\NewProjet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     <Compile Include="Update\UpdateExigence.Designer.cs">
       <DependentUpon>UpdateExigence.cs</DependentUpon>
     </Compile>
+    <Compile Include="Update\UpdateJalon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update\UpdateJalon.Designer.cs">
+      <DependentUpon>UpdateJalon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update\UpdateProjet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="New\NewExigence.resx">
       <DependentUpon>NewExigence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\NewJalon.resx">
+      <DependentUpon>NewJalon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New\NewProjet.resx">
       <DependentUpon>NewProjet.cs</DependentUpon>
@@ -121,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="Update\UpdateExigence.resx">
       <DependentUpon>UpdateExigence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update\UpdateJalon.resx">
+      <DependentUpon>UpdateJalon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update\UpdateProjet.resx">
       <DependentUpon>UpdateProjet.cs</DependentUpon>

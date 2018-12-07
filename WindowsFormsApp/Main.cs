@@ -108,6 +108,15 @@ namespace WindowsFormsApp
             // On met à jour l'affichage des tâches
 
             // On met à jour l'affichage des jalons
+            DGVJalons.Rows.Clear();
+            foreach (Jalon row in FactoryService.CreateServiceJalon().GetJalonByProjetId(idProjet))
+            {
+                string dateReelle = "(vide)";
+                if (row.DateLivraisonReelle.ToShortDateString() != "01/01/0001")
+                    dateReelle = row.DateLivraisonReelle.ToShortDateString();
+                DGVJalons.Rows.Add(row.Id, row.Nom, FactoryService.CreateServiceTrigramme().GetTrigrammeById(row.Responsable).Nom, row.DateLivraisonPrevue.ToShortDateString(), dateReelle);
+            }
+            DGVJalons.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void BtnDeleteProjet_Click(object sender, EventArgs e)
@@ -180,14 +189,35 @@ namespace WindowsFormsApp
             }
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            NewJalon frmNewJalon = new NewJalon(idProjet);
+            frmNewJalon.ShowDialog(this);
+            frmNewJalon.Dispose();
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void BtnDeleteJalon_Click(object sender, EventArgs e)
         {
+            // On demande à l'utilisateur la confirmation de la suppression
+            if (MessageBox.Show("Voyulez-vous vraiment supprimer définitivement ce jalon ?", "Suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                // On effectue la suppression
+                FactoryService.CreateServiceJalon().DeleteJalon(Int32.Parse(DGVJalons.CurrentRow.Cells[0].Value.ToString()));
+                // On reinitialise l'ffichage
+                RefreshInfosProjet(idProjet);
+                // On confirme la suppression à l'utilisateur
+                message = "La suppression a bien été effectuée.";
+                caption = "Félicitation !";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
+        }
 
+        private void DGVJalons_DoubleClick(object sender, EventArgs e)
+        {
+            UpdateJalon frmUpdateJalon = new UpdateJalon(Int32.Parse(DGVExigences.CurrentRow.Cells[0].Value.ToString()));
+            frmUpdateJalon.ShowDialog(this);
+            frmUpdateJalon.Dispose();
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnNewProjet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.CBListeProjets = new System.Windows.Forms.ComboBox();
@@ -40,12 +40,34 @@
             this.label10 = new System.Windows.Forms.Label();
             this.BtnDeleteExigence = new System.Windows.Forms.Button();
             this.DGVExigences = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.identifiant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnAddExigence = new System.Windows.Forms.Button();
             this.TabTaches = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.DGVTaches = new System.Windows.Forms.DataGridView();
+            this.Id_tache = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Libelle_tache = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Etat_tache = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Responsable_tache = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.BtnUpdateTache = new System.Windows.Forms.Button();
             this.BtnNewTache = new System.Windows.Forms.Button();
             this.TabJalons = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.DGVJalons = new System.Windows.Forms.DataGridView();
+            this.Id_jalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nom_jalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Responsable_jalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateLivraisonPrevue_jalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateLivraisonReelle_jalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label14 = new System.Windows.Forms.Label();
+            this.BtnDeleteJalon = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.PnlProjet = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.LabDateFinPrevueProjet = new System.Windows.Forms.Label();
@@ -62,36 +84,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.identifiant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVTaches = new System.Windows.Forms.DataGridView();
-            this.Id_tache = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Libelle_tache = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Etat_tache = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Responsable_tache = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.correspondTableAdapter1 = new Service_DA.DataSetTableAdapters.CorrespondTableAdapter();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabExigences.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVExigences)).BeginInit();
             this.TabTaches.SuspendLayout();
-            this.TabJalons.SuspendLayout();
-            this.PnlProjet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTaches)).BeginInit();
+            this.TabJalons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVJalons)).BeginInit();
+            this.PnlProjet.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnNewProjet
             // 
-            this.BtnNewProjet.BackColor = System.Drawing.Color.Maroon;
+            this.BtnNewProjet.BackColor = System.Drawing.Color.LightGray;
             this.BtnNewProjet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNewProjet.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnNewProjet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnNewProjet.Location = new System.Drawing.Point(896, 8);
             this.BtnNewProjet.Name = "BtnNewProjet";
             this.BtnNewProjet.Size = new System.Drawing.Size(180, 39);
@@ -130,9 +140,9 @@
             // 
             // BtnGererProjet
             // 
-            this.BtnGererProjet.BackColor = System.Drawing.Color.Maroon;
+            this.BtnGererProjet.BackColor = System.Drawing.Color.LightGray;
             this.BtnGererProjet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGererProjet.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnGererProjet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnGererProjet.Location = new System.Drawing.Point(660, 8);
             this.BtnGererProjet.Name = "BtnGererProjet";
             this.BtnGererProjet.Size = new System.Drawing.Size(180, 39);
@@ -160,12 +170,11 @@
             this.tabControl1.Controls.Add(this.TabTaches);
             this.tabControl1.Controls.Add(this.TabJalons);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(20, 124);
+            this.tabControl1.Location = new System.Drawing.Point(20, 113);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1056, 491);
+            this.tabControl1.Size = new System.Drawing.Size(1056, 502);
             this.tabControl1.TabIndex = 9;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // TabExigences
             // 
@@ -178,7 +187,7 @@
             this.TabExigences.Location = new System.Drawing.Point(4, 25);
             this.TabExigences.Name = "TabExigences";
             this.TabExigences.Padding = new System.Windows.Forms.Padding(3);
-            this.TabExigences.Size = new System.Drawing.Size(1048, 462);
+            this.TabExigences.Size = new System.Drawing.Size(1048, 473);
             this.TabExigences.TabIndex = 0;
             this.TabExigences.Text = "Exigences";
             // 
@@ -191,13 +200,12 @@
             this.label10.Size = new System.Drawing.Size(151, 15);
             this.label10.TabIndex = 5;
             this.label10.Text = "(Double click pour mdifier)";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // BtnDeleteExigence
             // 
-            this.BtnDeleteExigence.BackColor = System.Drawing.Color.Maroon;
+            this.BtnDeleteExigence.BackColor = System.Drawing.Color.Gainsboro;
             this.BtnDeleteExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDeleteExigence.ForeColor = System.Drawing.Color.White;
+            this.BtnDeleteExigence.ForeColor = System.Drawing.Color.Black;
             this.BtnDeleteExigence.Location = new System.Drawing.Point(202, 422);
             this.BtnDeleteExigence.Name = "BtnDeleteExigence";
             this.BtnDeleteExigence.Size = new System.Drawing.Size(180, 34);
@@ -216,14 +224,14 @@
             this.identifiant,
             this.Description,
             this.Type});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVExigences.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVExigences.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVExigences.Location = new System.Drawing.Point(16, 17);
             this.DGVExigences.MultiSelect = false;
             this.DGVExigences.Name = "DGVExigences";
@@ -233,11 +241,42 @@
             this.DGVExigences.TabIndex = 3;
             this.DGVExigences.DoubleClick += new System.EventHandler(this.DGVExigences_DoubleClick);
             // 
+            // Id
+            // 
+            this.Id.FillWeight = 20F;
+            this.Id.Frozen = true;
+            this.Id.HeaderText = "Id.";
+            this.Id.Name = "Id";
+            this.Id.Width = 5;
+            // 
+            // identifiant
+            // 
+            this.identifiant.Frozen = true;
+            this.identifiant.HeaderText = "Identifiant";
+            this.identifiant.Name = "identifiant";
+            this.identifiant.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.Frozen = true;
+            this.Description.HeaderText = "Descriptif";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 680;
+            // 
+            // Type
+            // 
+            this.Type.Frozen = true;
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Width = 190;
+            // 
             // BtnAddExigence
             // 
-            this.BtnAddExigence.BackColor = System.Drawing.Color.Maroon;
+            this.BtnAddExigence.BackColor = System.Drawing.Color.Gainsboro;
             this.BtnAddExigence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAddExigence.ForeColor = System.Drawing.Color.White;
+            this.BtnAddExigence.ForeColor = System.Drawing.Color.Black;
             this.BtnAddExigence.Location = new System.Drawing.Point(16, 422);
             this.BtnAddExigence.Name = "BtnAddExigence";
             this.BtnAddExigence.Size = new System.Drawing.Size(180, 34);
@@ -259,15 +298,72 @@
             this.TabTaches.Location = new System.Drawing.Point(4, 25);
             this.TabTaches.Name = "TabTaches";
             this.TabTaches.Padding = new System.Windows.Forms.Padding(3);
-            this.TabTaches.Size = new System.Drawing.Size(1048, 462);
+            this.TabTaches.Size = new System.Drawing.Size(1048, 473);
             this.TabTaches.TabIndex = 1;
             this.TabTaches.Text = "Tâches";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(446, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(82, 16);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Description :";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(449, 35);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(582, 154);
+            this.richTextBox1.TabIndex = 10;
+            this.richTextBox1.Text = "";
+            // 
+            // DGVTaches
+            // 
+            this.DGVTaches.AllowUserToAddRows = false;
+            this.DGVTaches.BackgroundColor = System.Drawing.Color.Silver;
+            this.DGVTaches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVTaches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_tache,
+            this.Libelle_tache,
+            this.Etat_tache,
+            this.Responsable_tache});
+            this.DGVTaches.Location = new System.Drawing.Point(16, 16);
+            this.DGVTaches.Name = "DGVTaches";
+            this.DGVTaches.Size = new System.Drawing.Size(424, 400);
+            this.DGVTaches.TabIndex = 9;
+            // 
+            // Id_tache
+            // 
+            this.Id_tache.HeaderText = "Id";
+            this.Id_tache.Name = "Id_tache";
+            this.Id_tache.Visible = false;
+            // 
+            // Libelle_tache
+            // 
+            this.Libelle_tache.HeaderText = "Libellé ";
+            this.Libelle_tache.Name = "Libelle_tache";
+            this.Libelle_tache.Width = 250;
+            // 
+            // Etat_tache
+            // 
+            this.Etat_tache.HeaderText = "Etat";
+            this.Etat_tache.Name = "Etat_tache";
+            this.Etat_tache.Width = 80;
+            // 
+            // Responsable_tache
+            // 
+            this.Responsable_tache.HeaderText = "Resp.";
+            this.Responsable_tache.Name = "Responsable_tache";
+            this.Responsable_tache.Width = 50;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(797, 441);
+            this.label11.Location = new System.Drawing.Point(891, 441);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(151, 15);
             this.label11.TabIndex = 8;
@@ -275,9 +371,9 @@
             // 
             // BtnUpdateTache
             // 
-            this.BtnUpdateTache.BackColor = System.Drawing.Color.Maroon;
+            this.BtnUpdateTache.BackColor = System.Drawing.Color.Gainsboro;
             this.BtnUpdateTache.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUpdateTache.ForeColor = System.Drawing.Color.White;
+            this.BtnUpdateTache.ForeColor = System.Drawing.Color.Black;
             this.BtnUpdateTache.Location = new System.Drawing.Point(202, 422);
             this.BtnUpdateTache.Name = "BtnUpdateTache";
             this.BtnUpdateTache.Size = new System.Drawing.Size(180, 34);
@@ -287,9 +383,9 @@
             // 
             // BtnNewTache
             // 
-            this.BtnNewTache.BackColor = System.Drawing.Color.Maroon;
+            this.BtnNewTache.BackColor = System.Drawing.Color.Gainsboro;
             this.BtnNewTache.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNewTache.ForeColor = System.Drawing.Color.White;
+            this.BtnNewTache.ForeColor = System.Drawing.Color.Black;
             this.BtnNewTache.Location = new System.Drawing.Point(16, 422);
             this.BtnNewTache.Name = "BtnNewTache";
             this.BtnNewTache.Size = new System.Drawing.Size(180, 34);
@@ -300,15 +396,123 @@
             // TabJalons
             // 
             this.TabJalons.BackColor = System.Drawing.Color.White;
+            this.TabJalons.Controls.Add(this.label15);
+            this.TabJalons.Controls.Add(this.dataGridView2);
+            this.TabJalons.Controls.Add(this.DGVJalons);
             this.TabJalons.Controls.Add(this.label14);
-            this.TabJalons.Controls.Add(this.button1);
+            this.TabJalons.Controls.Add(this.BtnDeleteJalon);
             this.TabJalons.Controls.Add(this.button2);
             this.TabJalons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabJalons.Location = new System.Drawing.Point(4, 25);
             this.TabJalons.Name = "TabJalons";
-            this.TabJalons.Size = new System.Drawing.Size(1048, 462);
+            this.TabJalons.Size = new System.Drawing.Size(1048, 473);
             this.TabJalons.TabIndex = 2;
             this.TabJalons.Text = "Jalons";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(570, 33);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(176, 16);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Tâches associées au jalon :";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(573, 52);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(460, 364);
+            this.dataGridView2.TabIndex = 12;
+            // 
+            // DGVJalons
+            // 
+            this.DGVJalons.AllowUserToAddRows = false;
+            this.DGVJalons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVJalons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_jalon,
+            this.Nom_jalon,
+            this.Responsable_jalon,
+            this.DateLivraisonPrevue_jalon,
+            this.DateLivraisonReelle_jalon});
+            this.DGVJalons.Location = new System.Drawing.Point(16, 18);
+            this.DGVJalons.MultiSelect = false;
+            this.DGVJalons.Name = "DGVJalons";
+            this.DGVJalons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVJalons.Size = new System.Drawing.Size(535, 398);
+            this.DGVJalons.TabIndex = 9;
+            this.DGVJalons.DoubleClick += new System.EventHandler(this.DGVJalons_DoubleClick);
+            // 
+            // Id_jalon
+            // 
+            this.Id_jalon.HeaderText = "Id.";
+            this.Id_jalon.Name = "Id_jalon";
+            this.Id_jalon.Visible = false;
+            this.Id_jalon.Width = 40;
+            // 
+            // Nom_jalon
+            // 
+            this.Nom_jalon.HeaderText = "Nom";
+            this.Nom_jalon.Name = "Nom_jalon";
+            this.Nom_jalon.ReadOnly = true;
+            this.Nom_jalon.Width = 200;
+            // 
+            // Responsable_jalon
+            // 
+            this.Responsable_jalon.HeaderText = "Resp.";
+            this.Responsable_jalon.Name = "Responsable_jalon";
+            this.Responsable_jalon.Width = 50;
+            // 
+            // DateLivraisonPrevue_jalon
+            // 
+            this.DateLivraisonPrevue_jalon.HeaderText = "Date prévue";
+            this.DateLivraisonPrevue_jalon.Name = "DateLivraisonPrevue_jalon";
+            this.DateLivraisonPrevue_jalon.ReadOnly = true;
+            this.DateLivraisonPrevue_jalon.Width = 120;
+            // 
+            // DateLivraisonReelle_jalon
+            // 
+            this.DateLivraisonReelle_jalon.HeaderText = "Date réelle";
+            this.DateLivraisonReelle_jalon.Name = "DateLivraisonReelle_jalon";
+            this.DateLivraisonReelle_jalon.ReadOnly = true;
+            this.DateLivraisonReelle_jalon.Width = 120;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(891, 441);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(151, 15);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "(Double click pour mdifier)";
+            // 
+            // BtnDeleteJalon
+            // 
+            this.BtnDeleteJalon.BackColor = System.Drawing.Color.Gainsboro;
+            this.BtnDeleteJalon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeleteJalon.ForeColor = System.Drawing.Color.Black;
+            this.BtnDeleteJalon.Location = new System.Drawing.Point(202, 422);
+            this.BtnDeleteJalon.Name = "BtnDeleteJalon";
+            this.BtnDeleteJalon.Size = new System.Drawing.Size(180, 34);
+            this.BtnDeleteJalon.TabIndex = 7;
+            this.BtnDeleteJalon.Text = "Supprimer";
+            this.BtnDeleteJalon.UseVisualStyleBackColor = false;
+            this.BtnDeleteJalon.Click += new System.EventHandler(this.BtnDeleteJalon_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gainsboro;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(16, 422);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(180, 34);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Nouveau";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // PnlProjet
             // 
@@ -340,9 +544,8 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(690, 89);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.Size = new System.Drawing.Size(0, 13);
             this.label13.TabIndex = 24;
-            this.label13.Text = "label13";
             // 
             // LabDateFinPrevueProjet
             // 
@@ -386,9 +589,9 @@
             // 
             // BtnDeleteProjet
             // 
-            this.BtnDeleteProjet.BackColor = System.Drawing.Color.Maroon;
+            this.BtnDeleteProjet.BackColor = System.Drawing.Color.Gainsboro;
             this.BtnDeleteProjet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDeleteProjet.ForeColor = System.Drawing.Color.White;
+            this.BtnDeleteProjet.ForeColor = System.Drawing.Color.Black;
             this.BtnDeleteProjet.Location = new System.Drawing.Point(896, 72);
             this.BtnDeleteProjet.Name = "BtnDeleteProjet";
             this.BtnDeleteProjet.Size = new System.Drawing.Size(180, 35);
@@ -399,9 +602,9 @@
             // 
             // BtnUpdateProjet
             // 
-            this.BtnUpdateProjet.BackColor = System.Drawing.Color.Maroon;
+            this.BtnUpdateProjet.BackColor = System.Drawing.Color.Gainsboro;
             this.BtnUpdateProjet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUpdateProjet.ForeColor = System.Drawing.Color.White;
+            this.BtnUpdateProjet.ForeColor = System.Drawing.Color.Black;
             this.BtnUpdateProjet.Location = new System.Drawing.Point(896, 26);
             this.BtnUpdateProjet.Name = "BtnUpdateProjet";
             this.BtnUpdateProjet.Size = new System.Drawing.Size(180, 35);
@@ -480,137 +683,15 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Infos sur le projet Projet";
             // 
-            // Id
-            // 
-            this.Id.FillWeight = 20F;
-            this.Id.Frozen = true;
-            this.Id.HeaderText = "Id.";
-            this.Id.Name = "Id";
-            this.Id.Width = 5;
-            // 
-            // identifiant
-            // 
-            this.identifiant.Frozen = true;
-            this.identifiant.HeaderText = "Identifiant";
-            this.identifiant.Name = "identifiant";
-            this.identifiant.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.Frozen = true;
-            this.Description.HeaderText = "Descriptif";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 680;
-            // 
-            // Type
-            // 
-            this.Type.Frozen = true;
-            this.Type.HeaderText = "Type";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Width = 190;
-            // 
-            // DGVTaches
-            // 
-            this.DGVTaches.AllowUserToAddRows = false;
-            this.DGVTaches.BackgroundColor = System.Drawing.Color.Silver;
-            this.DGVTaches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVTaches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_tache,
-            this.Libelle_tache,
-            this.Etat_tache,
-            this.Responsable_tache});
-            this.DGVTaches.Location = new System.Drawing.Point(16, 16);
-            this.DGVTaches.Name = "DGVTaches";
-            this.DGVTaches.Size = new System.Drawing.Size(424, 400);
-            this.DGVTaches.TabIndex = 9;
-            // 
-            // Id_tache
-            // 
-            this.Id_tache.HeaderText = "Id";
-            this.Id_tache.Name = "Id_tache";
-            this.Id_tache.Visible = false;
-            // 
-            // Libelle_tache
-            // 
-            this.Libelle_tache.HeaderText = "Libellé ";
-            this.Libelle_tache.Name = "Libelle_tache";
-            this.Libelle_tache.Width = 250;
-            // 
-            // Etat_tache
-            // 
-            this.Etat_tache.HeaderText = "Etat";
-            this.Etat_tache.Name = "Etat_tache";
-            this.Etat_tache.Width = 80;
-            // 
-            // Responsable_tache
-            // 
-            this.Responsable_tache.HeaderText = "Resp.";
-            this.Responsable_tache.Name = "Responsable_tache";
-            this.Responsable_tache.Width = 50;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(449, 35);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(582, 154);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(446, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 16);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Description :";
-            // 
             // correspondTableAdapter1
             // 
             this.correspondTableAdapter1.ClearBeforeFill = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(887, 444);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(151, 15);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "(Double click pour mdifier)";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Maroon;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(198, 425);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 34);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Supprimer";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Maroon;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(12, 425);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 34);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Nouveau";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1118, 731);
             this.Controls.Add(this.PnlProjet);
             this.Controls.Add(this.panel1);
@@ -628,11 +709,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVExigences)).EndInit();
             this.TabTaches.ResumeLayout(false);
             this.TabTaches.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVTaches)).EndInit();
             this.TabJalons.ResumeLayout(false);
             this.TabJalons.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVJalons)).EndInit();
             this.PnlProjet.ResumeLayout(false);
             this.PnlProjet.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTaches)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -684,7 +767,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Etat_tache;
         private System.Windows.Forms.DataGridViewTextBoxColumn Responsable_tache;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnDeleteJalon;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView DGVJalons;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_jalon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nom_jalon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Responsable_jalon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateLivraisonPrevue_jalon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateLivraisonReelle_jalon;
     }
 }

@@ -4971,7 +4971,7 @@ SELECT Id, Nom, Responsable, DateLivraisonPrevue, DateLivraisonReelle, Projet FR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        Jalon.*\r\nFROM            Jalon\r\nWHERE Projet = @id_projet";
@@ -4984,26 +4984,31 @@ SELECT Id, Nom, Responsable, DateLivraisonPrevue, DateLivraisonReelle, Projet FR
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"INSERT INTO [Jalon] ([Nom], [Responsable], [DateLivraisonPrevue], [DateLivraisonReelle], [Projet]) VALUES (@Nom, @Responsable, @DateLivraisonPrevue, @DateLivraisonReelle, @Projet);
-SELECT Id, Nom, Responsable, DateLivraisonPrevue, DateLivraisonReelle, Projet FROM Jalon WHERE (Id = SCOPE_IDENTITY())";
+            this._commandCollection[2].CommandText = "SELECT        Jalon.*\r\nFROM            Jalon\r\nWHERE Id= @id";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Responsable", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Responsable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateLivraisonPrevue", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DateLivraisonPrevue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateLivraisonReelle", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DateLivraisonReelle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projet", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Projet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE [Jalon] SET [Nom] = @Nom, [Responsable] = @Responsable, [DateLivraisonPrev" +
-                "ue] = @DateLivraisonPrevue, [DateLivraisonReelle] = @DateLivraisonReelle, [Proje" +
-                "t] = @Projet \r\nWHERE [Id] = @Id";
+            this._commandCollection[3].CommandText = @"INSERT INTO [Jalon] ([Nom], [Responsable], [DateLivraisonPrevue], [DateLivraisonReelle], [Projet]) VALUES (@Nom, @Responsable, @DateLivraisonPrevue, @DateLivraisonReelle, @Projet);
+SELECT Id, Nom, Responsable, DateLivraisonPrevue, DateLivraisonReelle, Projet FROM Jalon WHERE (Id = SCOPE_IDENTITY())";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Responsable", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Responsable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateLivraisonPrevue", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DateLivraisonPrevue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateLivraisonReelle", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DateLivraisonReelle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projet", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Projet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE [Jalon] SET [Nom] = @Nom, [Responsable] = @Responsable, [DateLivraisonPrev" +
+                "ue] = @DateLivraisonPrevue, [DateLivraisonReelle] = @DateLivraisonReelle, [Proje" +
+                "t] = @Projet \r\nWHERE [Id] = @Id";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Responsable", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Responsable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateLivraisonPrevue", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DateLivraisonPrevue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateLivraisonReelle", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DateLivraisonReelle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projet", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Projet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5018,6 +5023,18 @@ SELECT Id, Nom, Responsable, DateLivraisonPrevue, DateLivraisonReelle, Projet FR
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
+            DataSet.JalonDataTable dataTable = new DataSet.JalonDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet.JalonDataTable GetJalonById(int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
             DataSet.JalonDataTable dataTable = new DataSet.JalonDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5080,8 +5097,8 @@ SELECT Id, Nom, Responsable, DateLivraisonPrevue, DateLivraisonReelle, Projet FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertJalon(string Nom, global::System.Nullable<int> Responsable, string DateLivraisonPrevue, string DateLivraisonReelle, global::System.Nullable<int> Projet) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+        public virtual int InsertJalon(string Nom, global::System.Nullable<int> Responsable, DateTime DateLivraisonPrevue, DateTime DateLivraisonReelle, global::System.Nullable<int> Projet) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((Nom == null)) {
                 throw new global::System.ArgumentNullException("Nom");
             }
@@ -5098,13 +5115,13 @@ SELECT Id, Nom, Responsable, DateLivraisonPrevue, DateLivraisonReelle, Projet FR
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(DateLivraisonPrevue));
+                command.Parameters[2].Value = ((DateTime)(DateLivraisonPrevue));
             }
             if ((DateLivraisonReelle == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[3].Value = ((string)(DateLivraisonReelle));
+                command.Parameters[3].Value = ((DateTime)(DateLivraisonReelle));
             }
             if ((Projet.HasValue == true)) {
                 command.Parameters[4].Value = ((int)(Projet.Value));
@@ -5133,8 +5150,8 @@ SELECT Id, Nom, Responsable, DateLivraisonPrevue, DateLivraisonReelle, Projet FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateJalon(string Nom, global::System.Nullable<int> Responsable, string DateLivraisonPrevue, string DateLivraisonReelle, global::System.Nullable<int> Projet, int Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+        public virtual int UpdateJalon(string Nom, global::System.Nullable<int> Responsable, DateTime DateLivraisonPrevue, DateTime DateLivraisonReelle, global::System.Nullable<int> Projet, int Id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((Nom == null)) {
                 throw new global::System.ArgumentNullException("Nom");
             }
@@ -5151,13 +5168,13 @@ SELECT Id, Nom, Responsable, DateLivraisonPrevue, DateLivraisonReelle, Projet FR
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(DateLivraisonPrevue));
+                command.Parameters[2].Value = ((DateTime)(DateLivraisonPrevue));
             }
             if ((DateLivraisonReelle == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[3].Value = ((string)(DateLivraisonReelle));
+                command.Parameters[3].Value = ((DateTime)(DateLivraisonReelle));
             }
             if ((Projet.HasValue == true)) {
                 command.Parameters[4].Value = ((int)(Projet.Value));
